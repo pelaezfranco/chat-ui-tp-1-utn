@@ -1,0 +1,6 @@
+q::before {
+  content: "·";
+  color: red;
+  font-size: 2em;
+  vertical-align: middle;
+}
