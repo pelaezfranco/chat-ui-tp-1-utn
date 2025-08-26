@@ -9,9 +9,11 @@ body {
   background: #8a0909;
 }
 
-container{
+.container{
   display: flex;
+  flex-direction: row;
   height: 100vh;
+  width: 100px;
 }
 .section{
   display: flex;
@@ -27,11 +29,15 @@ container{
   width: 25px;
 }
 
-q::before {
-  content: "·";
+
+.status.online::before {
+  content: "●" ;
+  color: green;
+}
+
+.status.offline::before {
+  content: "●";
   color: red;
-  font-size: 2em;
-  vertical-align: middle;
 }
 
 
@@ -46,13 +52,13 @@ q::before {
 }
 
   .sidebar {
-  padding: 30px;
-  width: 20%;
+  width: 25%;
+  min-width: 250px;
   display: flex;
   background: #fff;
   border-right: 1px solid #ddd;
   flex-direction: column;
-  padding: 40px;
+  padding: 20px;
 }
 
 .search {
@@ -85,4 +91,105 @@ q::before {
   height: 40px;
   border-radius: 50%;
   margin-right: 10%;
+}
+
+.contact h4 {
+  font-size: 14px;
+}
+
+
+.chat {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background: #5eb966;
+}
+
+.chat-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px;
+  background: #fff;
+  border-bottom: 1px solid #ddd;
+}
+
+.chat-header img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.chat-header div{
+  flex: 1;
+}
+
+.chat-header p {
+  margin: 0;
+  font-size: 12px;
+  color: #5eb966;
+}
+
+.chat-actions button {
+  background: none;
+  border: none;
+  font-size: 18px;
+  margin-left: 8px;
+  cursor: pointer;
+}
+
+.chat-actions button:hover {
+  opacity: 0.7;
+}
+
+.chat-messages {
+  flex: 1;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  overflow-y: auto;
+}
+
+.message {
+  max-width: 60%;
+  padding: 10px;
+  border-radius: 8px;
+  font-size: 14px;
+  position: relative;
+  word-wrap: break-word;
+}
+
+.message.sent {
+  align-self: flex-end;
+  background: #8a0909;
+}
+
+.message.received {
+  align-self: flex-start;
+  background: red;
+}
+
+.timestamp {
+  display: block;
+  font-size: 11px;
+  color: gray;
+  margin-top: 4px;
+}
+
+.chat-footer input {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 20px;
+  outline: none;
+  margin-right: 10px;
+}
+
+.chat-footer button {
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
 }
