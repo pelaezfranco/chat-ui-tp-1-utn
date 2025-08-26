@@ -261,5 +261,8 @@ text {
   .chat-buttons {
     justify-content: center;
   }
+  .main-chats{
+    grid-template-columns: 1fr;
+  }
 }
 
